@@ -1,5 +1,7 @@
 import "./styles.css";
 import Card from "components/Card/Card";
+import { v4 } from "uuid";
+import { ReactNode } from "react";
 
 function Homework_06() {
   interface Cars {
@@ -16,16 +18,19 @@ function Homework_06() {
     { brand: "Audi", price: 50000, isDiesel: true },
   ];
 
-  const carList = cars.map((car, index) => (
-    <Card
-      key={index}
-      brand={car.brand}
-      price={car.price}
-      isDiesel={car.isDiesel}
-    />
-  ));
+  const carList: ReactNode = cars.map((car: Cars) => {
+    const carId: string = v4();
+
+    return (
+      <Card
+        key={carId}
+        brand={car.brand}
+        price={car.price}
+        isDiesel={car.isDiesel}
+      />
+    );
+  });
 
   return <div className="homework06-wrapper">{carList}</div>;
 }
-
 export default Homework_06;
