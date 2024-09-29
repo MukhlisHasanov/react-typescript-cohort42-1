@@ -1,13 +1,16 @@
-
-import "./styles.css";
+import { ButtonComponent } from "./styles";
 import ButtonProps from "./types";
 
-
-function Button({ type = "button", name, onClick }: ButtonProps) {
+function Button({
+  type = "button",
+  name,
+  onClick,
+  isDeleteVariant = false,
+}: ButtonProps) {
   return (
-    <button className="button-component" onClick={onClick} type={type}>
+    <ButtonComponent $isDeleteVariant={isDeleteVariant} onClick={onClick} type={type}>
       {name}
-    </button>
+    </ButtonComponent>
   );
 }
 

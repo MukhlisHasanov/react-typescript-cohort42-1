@@ -1,6 +1,6 @@
 import "./styles.css";
-import { SimpsonCardProps } from "./data";
-import "./data";
+import { SimpsonsCardProps } from "./types";
+
 
 function SimponsCard({
   firstName,
@@ -8,7 +8,7 @@ function SimponsCard({
   avatar,
   job,
   hobby = "No Hobby",
-}: SimpsonCardProps) {
+}: SimpsonsCardProps) {
   const getSimpsonName = (): string => {
     return `${firstName} ${lastName}`;
   };
