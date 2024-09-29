@@ -1,13 +1,11 @@
-import "./styles.css";
 import { ModalProps } from "./types";
+import { ModalWrapper, ModalComponent } from "./styles";
 
-
-function Modal({ children }: ModalProps) {
-  
+function Modal({ children, closeModal }: ModalProps) {
   return (
-    <div className="modal-wrapper">
-      <div className="modal-component">{children}</div>
-    </div>
+    <ModalWrapper onClick={closeModal}>
+      <ModalComponent>{children}</ModalComponent>
+    </ModalWrapper>
   );
 }
 

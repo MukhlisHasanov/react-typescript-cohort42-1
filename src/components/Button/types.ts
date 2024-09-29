@@ -5,6 +5,7 @@ interface ButtonProps {
   name: string;
   onClick?: () => void;
   isDeleteVariant?: boolean;
+  disabled?: boolean;
 }
 
 export default ButtonProps;

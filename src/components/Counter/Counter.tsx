@@ -3,7 +3,7 @@
 import Button from "components/Button/Button";
 
 import { CounterProps } from "./types";
-import "./styles.css";
+import { Count, ButtonControl, CounterComponent } from "./styles";
 
 // !! Есть 2 основных способа вызова перерендера(обновления) компонента:
 // 1 - изменения state(посредством вызова функции setState())
@@ -27,15 +27,15 @@ function Counter({ count, onMinus, onPlus }: CounterProps) {
   // };
 
   return (
-    <div className="counter-wrapper">
-      <div className="button-control">
+    <CounterComponent>
+      <ButtonControl>
         <Button name="-" onClick={onMinus} />
-      </div>
-      <p className="count">{count}</p>
-      <div className="button-control">
+      </ButtonControl>
+      <Count>{count}</Count>
+      <ButtonControl>
         <Button name="+" onClick={onPlus} />
-      </div>
-    </div>
+      </ButtonControl>
+    </CounterComponent>
   );
 }
 

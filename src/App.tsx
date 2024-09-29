@@ -9,26 +9,25 @@ import Lesson_08 from "lessons/Lesson_08/Lesson_08";
 
 // CONSULTATIONS
 
-
 import Consultation_03 from "consultations/Consultation/Consultation_03";
 import GlobalStyles from "styles/GlobalStyles";
-
+import Homework_08 from "homeworks/Homework_08/Homework_08";
 
 function App() {
   return (
     <>
-    <GlobalStyles />
+      <GlobalStyles />
       {/* LESSONS */}
       {/* <Lesson_06 /> */}
       {/* <Lesson_07 /> */}
       {/* <Lesson_08 /> */}
       {/* HOMEWORKS */}
       {/* <Homework_06 /> */}
-      <Homework_07 />
+      {/* <Homework_07 /> */}
+      <Homework_08 />
 
       {/* CONSULTATIONS */}
       {/* <Consultation_03 /> */}
-   
     </>
   );
 }
