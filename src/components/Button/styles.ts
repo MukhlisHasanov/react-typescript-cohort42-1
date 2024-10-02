@@ -3,7 +3,6 @@ import { colors } from "styles/colors";
 
 interface ButtonComponentStyleProps {
   $isDeleteVariant: boolean;
-  disabled: boolean;
 }
 
 export const ButtonComponent = styled.button<ButtonComponentStyleProps>`
@@ -11,15 +10,20 @@ export const ButtonComponent = styled.button<ButtonComponentStyleProps>`
   width: 100%;
   height: 70px;
   border: none;
-  background-color: ${({ disabled, $isDeleteVariant }) =>
-    disabled
-      ? colors.DISABLED
-      : $isDeleteVariant
-      ? colors.ERROR
-      : colors.PRIMARY_BLUE};
+  background-color: ${({ $isDeleteVariant, disabled }) => {
+    if (disabled) {
+      return colors.DISABLED;
+    } else {
+      if ($isDeleteVariant) {
+        return colors.ERROR;
+      } else {
+        return colors.PRIMARY_BLUE;
+      }
+    }
+  }};
   color: white;
   font-size: 20px;
   font-weight: bold;
   border-radius: 4px;
-  cursor: pointer;
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;

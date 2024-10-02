@@ -8,38 +8,36 @@ function Homework_08() {
     <HomeworkWrapper>
       <ButtonControl>
         <Button
-          disabled={false}
           name="Active Button"
           onClick={() => {
-            console.log("I am Simple Button");
+            console.log("I am Active Button");
           }}
         />
       </ButtonControl>
 
       <ButtonControl>
         <Button
-          isDeleteVariant={true}
-          disabled={false}
+          // Если isDeleteVariant не передавать явно true, то сам React это воспринимает это как true
+          isDeleteVariant
           name="Delete Button"
           onClick={() => {
-            console.log("I am Simple Button");
+            console.log("I am Delete Button");
           }}
         />
       </ButtonControl>
 
       <ButtonControl>
         <Button
-          disabled={true}
+          disabled
           name="Deactive Button"
           onClick={() => {
-            console.log("I am Simple Button");
+            console.log("I am Deactive Button");
           }}
         />
       </ButtonControl>
 
       <Input
-        disabled={false}
-        error={undefined}
+        $error={undefined}
         id="input-1"
         label="Normal input"
         placeholder="Enter your first name"
@@ -47,24 +45,17 @@ function Homework_08() {
       />
 
       <Input
-        disabled={true}
-        error={undefined}
+        // Если isDeleteVariant не передавать явно true, то сам React это воспринимает это как true
+        disabled
+        $error={undefined}
         id="input-1"
         label="Disable input"
         placeholder="Enter your first name"
         name="first_name"
       />
+
       <Input
-        disabled={false}
-        error={undefined}
-        id="input-1"
-        label="Input without error"
-        placeholder="Enter your first name"
-        name="first_name"
-      />
-      <Input
-        disabled={false}
-        error="Some error"
+        $error={"Some error"}
         id="input-1"
         label="Input with error"
         placeholder="Enter your first name"

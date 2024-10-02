@@ -8,18 +8,22 @@ function Input({
   placeholder,
   label,
   disabled = false,
-  error,
+  $error = undefined,
+  value,
+  onChange,
 }: InputProps) {
   return (
     <InputWrapper>
       <InputLabel htmlFor={id}>{label}</InputLabel>
       <InputComponent
         disabled={disabled}
-        error={error}
+        $error={$error}
         id={id}
         name={name}
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       ></InputComponent>
     </InputWrapper>
   );
