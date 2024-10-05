@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 function Lesson_10 () {
   const [country, setCountry] = useState<string>("");
-  const [universities, setUniversities] = useState<string | undefined>(undefined);
+  const [universities, setUniversities] = useState<any[]>([]);
   const [error, setError] = useState<string | undefined>(undefined);
 
 
@@ -17,26 +17,20 @@ function Lesson_10 () {
   };
 
 
-  const getUniversities = async () => {
-    setUniversities(undefined);
+  const getUniversities = () => {
+    setUniversities([]);
     setError(undefined);
 
-    const response = await fetch(`http://universities.hipolabs.com/search?country=${country}, 
-      { method: "GET",}`);
-
-    const result = await response.json();
-
-    if (response.ok) {
-      setUniversities(result.searcountry);
-    } else {
-      setError("Error!!!");
-    }
-  };
-
-  useEffect(() => {
-    getUniversities();
-  }, []);
-
+    fetch(`http://universities.hipolabs.com/search?country=${country}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error');
+        }
+       
+        if (response)
+  })
+    .then(data => {
+        
   console.log(getUniversities);
     return (
         <PageWrapper>
@@ -56,4 +50,6 @@ function Lesson_10 () {
       </PageWrapper>
     )
 }
-export default Lesson_10
+)};
+}
+export default Lesson_10;
