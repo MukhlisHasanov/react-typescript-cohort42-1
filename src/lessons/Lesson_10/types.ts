@@ -2,10 +2,14 @@
 
 import { HTMLAttributeAnchorTarget } from "react";
 
- export interface University {
-    name: string;
-    country: string;
-    web_pages: string[];
+export interface ApiUniversity {
+    'state-province': string | null;
+  web_pages: string[];
+  name: string;
+  country: string;
+  domains: string[]; 
 }
-
+export interface University extends ApiUniversity {
+    id: string;
+  }
 

@@ -7,58 +7,54 @@ export const Div01 = styled.div`
   align-items: center;
   justify-content: center;
   padding: 100px;
-  background-color: white;
+  background-color: black;
   min-height: 100vh;
 `;
 
 
 export const LabelCountry = styled.label`
-display: flex;
   font-size: 18px;
-  width: 85vw;
   color: green;
   margin-bottom: 15px;
-  padding-bottom: 50%;
-  padding: 10px;
   background-color: yellow;
 
   input {
     margin-left: 10px;
-    padding: 10px;
-    font-size: 15px;
+    padding: 8px;
+    font-size: 16px;
     border: 2px solid violet;
     border-radius: 5px;
-    width: 60vw;
+    width: 300px;
     background-color: red;
   }
 
   input::placeholder {
-    color: gray;
+    color: #999;
   }
 `;
 
 
 export const Div02 = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   margin-top: 20px;
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `;
 
 
 export const Div03 = styled.div`
-  background-color: white;
+  background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(1, 1, 1, 1.1);
   transition: transform 0.3s ease-in-out;
 
   h3 {
-    font-size: 10px;
+    font-size: 20px;
     color: black;
   }
 
@@ -73,8 +69,7 @@ export const Div03 = styled.div`
   }
 
   &:hover {
-    transform: scale(1.35);
+    transform: scale(1.65);
   }
 `;
-
 

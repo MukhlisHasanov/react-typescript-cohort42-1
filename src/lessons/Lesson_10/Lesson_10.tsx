@@ -1,9 +1,9 @@
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
-import { Div01,Div02,Div03,LabelCountry} from "./styles";
+import {  Div01, Div02, Div03, LabelCountry } from "./styles";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { ApiUniversity, University } from './types';
+import { ApiUniversity, University } from "./types";
 
 function Lesson_10() {
   const [country, setCountry] = useState<string>("");
@@ -51,27 +51,41 @@ function Lesson_10() {
   };
 
   return (
-
     <Div01>
       <LabelCountry>
         Country:{" "}
         <Input
           id="1"
-          label="Country"
+          label=""
           placeholder="Enter Country for searching universities"
           name="University"
           value={country}
           onChange={onInputCountry}
-        />
+        />{" "}
+        
+          <Button name="Get Universities" onClick={getUniversities} />
+        
       </LabelCountry>
-      <Button name="Get Universities" onClick={getUniversities} />
-      <Div02>{universities.map((university) => (
-           
-        <Div03>  
-          
-          </Div03>))}
+
+      <Div02>
+        {universities.map((university) => (
+          <Div03 key={university.id}>
+            <h3>{university.name}</h3>
+            <p>Country: {university.country}</p>
+            <p>Web Pages:</p>
+            <ul>
+              {university.web_pages.map((page, index) => (
+                <li key={index}>
+                  <a href={page} target="_blank" rel="noopener noreferrer">
+                    {page}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Div03>
+        ))}
       </Div02>
     </Div01>
   );
-} 
+}
 export default Lesson_10;
