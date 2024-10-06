@@ -1,5 +1,4 @@
 // HOMEWORKS
-import Homework_06 from "homeworks/Homework_06/Homework_06";
 import Homework_07 from "homeworks/Homework_07/Homework_07";
 
 // LESSONS

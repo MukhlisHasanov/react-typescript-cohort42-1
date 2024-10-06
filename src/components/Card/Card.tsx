@@ -1,18 +1,21 @@
-import "./styles.css";
+import { CardWrapper, FirstString, SecondString, ThrirdString } from "./styles";
+import { CardProps } from "./types";
+import { v4 } from "uuid";
 
-interface CardProps {
-  brand: string;
-  price: number;
-  isDiesel: boolean;
-}
-
-function Card({ brand, price, isDiesel }: CardProps) {
+function Card({ universityName, country, website }: CardProps) {
   return (
-    <div className="card-wrapper">
-      <p className="card-item">Brand: {brand} </p>
-      <p className="card-item">Price: {price}</p>
-      <p className="card-item">isDiesel: {isDiesel ? "Yes" : "No"}</p>
-    </div>
+    <CardWrapper>
+      <FirstString>Name: {universityName} </FirstString>
+      <SecondString>Country: {country}</SecondString>
+      <ThrirdString>
+        Website:
+        {website.map((url, v4) => (
+          <a key={v4} href={url} target="_blank" rel="noopener noreferrer">
+            {url}
+          </a>
+        ))}
+      </ThrirdString>
+    </CardWrapper>
   );
 }
 
