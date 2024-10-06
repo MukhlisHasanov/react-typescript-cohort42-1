@@ -19,8 +19,6 @@ export const LabelCountry = styled.label`
   width: 100%;
   font-size: 50px;
 
-  box-sizing: border-box;
-
   input {
     margin: 25px;
     padding: 10px;
