@@ -1,6 +1,6 @@
 import Feedback from "components/Feedback/Feedback";
 import Input from "components/Input/Input";
-import "./styles.css";
+import { HomeworkWrapper } from "./styles";
 import LoginForm from "components/LoginForm/LoginForm";
 import SimponsCard from "components/SimpsonsCard/SimpsonCard";
 import Button from "components/Button/Button";
@@ -49,7 +49,7 @@ function Homework_07() {
   };
 
   return (
-    <div className="homework07-wrapper">
+    <HomeworkWrapper>
       <Input
         id="input-1"
         label="First name"
@@ -100,7 +100,7 @@ function Homework_07() {
           </div>
         </Modal>
       )}
-    </div>
+    </HomeworkWrapper>
   );
 }
 
