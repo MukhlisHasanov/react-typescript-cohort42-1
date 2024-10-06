@@ -1,6 +1,6 @@
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
-import {  Div01, Div02, Div03, LabelCountry } from "./styles";
+import {  ButtenV, Div01, Div02, Div03, LabelCountry } from "./styles";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ApiUniversity, University } from "./types";
@@ -52,8 +52,9 @@ function Lesson_10() {
 
   return (
     <Div01>
+      
       <LabelCountry>
-        Country:{" "}
+        
         <Input
           id="1"
           label=""
@@ -61,11 +62,8 @@ function Lesson_10() {
           name="University"
           value={country}
           onChange={onInputCountry}
-        />{" "}
-        
-          <Button name="Get Universities" onClick={getUniversities} />
-        
-      </LabelCountry>
+        />
+      </LabelCountry><ButtenV name="Click" onClick={getUniversities}>Click</ButtenV>  
 
       <Div02>
         {universities.map((university) => (
