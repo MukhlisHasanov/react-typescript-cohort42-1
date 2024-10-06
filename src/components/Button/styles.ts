@@ -6,10 +6,10 @@ interface ButtonComponentStyleProps {
 }
 
 export const ButtonComponent = styled.button<ButtonComponentStyleProps>`
-  outline: none;
+  outline: 1px;
   width: 100%;
-  height: 70px;
-  border: none;
+  height: 100%;
+  border: 1px;
   background-color: ${({ $isDeleteVariant, disabled }) => {
     if (disabled) {
       return colors.DISABLED;
@@ -26,4 +26,14 @@ export const ButtonComponent = styled.button<ButtonComponentStyleProps>`
   font-weight: bold;
   border-radius: 4px;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+
+  &:hover {
+    background-color: green;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 1.4);
+  }
+
+  &:active {
+    transform: scale(1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  }
 `;

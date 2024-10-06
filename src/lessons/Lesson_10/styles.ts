@@ -5,7 +5,7 @@ export const Div01 = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px;
+  padding: 0;
   margin: 0;
   background-color: white;
   min-height: 100vh;
@@ -40,31 +40,11 @@ export const LabelCountry = styled.label`
   }
 `;
 
-export const ButtenV = styled.button`
- background-color: blue;
- width: 200px;
- height: 50px;
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-   
-   position: fixed;
-  top: 20px;  
-  right: 20px;  
+export const ButtonPosition = styled.button`
+position: relative; 
+margin: auto;
+border-radius: 10px;
 
-  &:hover {
-    background-color: green;
-    box-shadow: 0 6px 12px rgba(0, 123, 255, 1.4); 
-  }
-
-
-  &:active {
-    transform: scale(1);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);  
-  }
 `;
 
 
@@ -110,7 +90,12 @@ export const Div03 = styled.div`
     box-shadow: 0px 25px 50px rgb(255, 255, 0);
   }
 `;
-
+ export const Div05 = styled.div`
+ 
+ display: flex;
+  flex-direction: row;
+ 
+ `
 
 
 
