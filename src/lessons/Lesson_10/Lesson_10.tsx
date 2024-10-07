@@ -17,24 +17,17 @@ import { ApiUniversity, University } from "./types";
 
 function Lesson_10() {
   const [country, setCountry] = useState<string>("");
-  const [universities, setUniversities] = useState<University[]>([]);
+  const [universities, setUniversities] = useState<University[] | undefined>(
+    undefined
+  );
   const [error, setError] = useState<string | undefined>(undefined);
-  // const disabledButton = () => {
-  //   if (country === "") {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // };
+
   const onInputCountry = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setCountry(event.target.value);
   };
-  const getUniversities = async (): Promise<void> => {
+  const getUniversities = async () => {
     const response: Response = await fetch(
-      `http://universities.hipolabs.com/search?country=${encodeURIComponent(
-        country
-      )}`,
-      { method: "GET" }
+      `http://universities.hipolabs.com/search?country=${country}`
     );
 
     const result: ApiUniversity[] = await response.json();
@@ -68,24 +61,28 @@ function Lesson_10() {
           />
         </InputPosition>
         <ButtonPosition>
-          <Button disabled={false} name="Search" onClick={getUniversities} />
-        </ButtonPosition>{" "}
+          <Button disabled={!country} name="Search" onClick={getUniversities} />
+        </ButtonPosition>
       </Position>
       {error && <Text>{error}</Text>}
 
-      <Div02>
-        {universities.map((university) => (
-          <Div03 key={university.id}>
-            {
-              <Card
-                universityName={university.name}
-                country={university.country}
-                website={university.web_pages}
-              />
-            }
-          </Div03>
-        ))}
-      </Div02>
+      {universities && (
+        <Div02>
+          {universities.length > 0
+            ? universities.map((university) => (
+                <Div03 key={university.id}>
+                  {
+                    <Card
+                      universityName={university.name}
+                      country={university.country}
+                      website={university.web_pages}
+                    />
+                  }
+                </Div03>
+              ))
+            : "Universities not found"}
+        </Div02>
+      )}
     </PageWrapper>
   );
 }

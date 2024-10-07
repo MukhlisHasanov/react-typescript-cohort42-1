@@ -37,12 +37,13 @@ export const Position = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  text-align: center;
   justify-content: center;
   width: 100%;
 `;
 
 export const ButtonPosition = styled.div`
-  width: 100%;
+  width: 300px;
   padding: 0;
   margin-bottom: 20px;
   box-sizing: border-box;

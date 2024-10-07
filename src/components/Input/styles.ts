@@ -33,7 +33,7 @@ export const InputComponent = styled.input<InputComponentStyleProps>`
     }
   }};
 
-  border-radius: 50px;
+  border-radius: 4px;
   padding: 10px;
   outline: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
