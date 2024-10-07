@@ -1,4 +1,4 @@
-import "./styles.css";
+import { LessonWrapper } from "./styles";
 
 function Lesson_06() {
   // 1 ТИП: string - строковый ("", '', ``);

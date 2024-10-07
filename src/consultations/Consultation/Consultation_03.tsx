@@ -2,7 +2,7 @@ import { useState } from "react";
 import { v4 } from "uuid";
 import Button from "components/Button/Button";
 
-import "./styles.css";
+import { ConsultationWrapper } from "./styles";
 
 // ПРИМЕР РАБОТЫ С ДЕКСТРУКТУРИЗАЦИЕЙ МАССИВОВ
 // const animals = ["Dog", "Cat", "Pig", "Lion"];
@@ -26,23 +26,23 @@ interface Ingredient {
 
 function Consultation_03() {
   // Подробный пример работы useState
-    const [count, setCount] = useState(0);
-    let count2 = 0;
+  const [count, setCount] = useState(0);
+  let count2 = 0;
 
-    const onAdd = () => {
-      setCount((prevValue: number) => {
-        return prevValue + 1;
-      });
-    };
+  const onAdd = () => {
+    setCount((prevValue: number) => {
+      return prevValue + 1;
+    });
+  };
 
-    const onAdd2 = () => {
-      count2 = count2 + 1;
-      console.log("count from  let indidefunction onAdd2", count2);
-    };
+  const onAdd2 = () => {
+    count2 = count2 + 1;
+    console.log("count from  let indidefunction onAdd2", count2);
+  };
 
-    console.log("Update");
-    console.log("count from state", count);
-    console.log("count from  let", count2);
+  console.log("Update");
+  console.log("count from state", count);
+  console.log("count from  let", count2);
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
   const ingredientButtonNames: string[] = [
     "Burger",
@@ -90,7 +90,7 @@ function Consultation_03() {
   });
 
   return (
-    <div className="consultation03-wrapper">
+    <ConsultationWrapper>
       {/* <Button name="Add state" onClick={onAdd} />
       <Button name="Add simple let" onClick={onAdd2} /> */}
       <div className="ingredient-buttons-container">{ingredientButtons}</div>
@@ -98,7 +98,7 @@ function Consultation_03() {
         <p className="ingredients-title">Your order</p>
         <ol>{orderList}</ol>
       </div>
-    </div>
+    </ConsultationWrapper>
   );
 }
 

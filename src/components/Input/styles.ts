@@ -28,17 +28,18 @@ export const InputComponent = styled.input<InputComponentStyleProps>`
       if ($error !== undefined) {
         return `2px solid ${colors.ERROR}`;
       } else {
-        return `1px solid ${colors.DISABLED}`;
+        return `1px solid ${colors.NORMAL}`;
       }
     }
   }};
 
   border-radius: 4px;
-  padding: 12px;
+  padding: 10px;
   outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   &::placeholder {
-    color: #6f6f6f;
+    color: gray;
     font-size: 16px;
   }
 `;

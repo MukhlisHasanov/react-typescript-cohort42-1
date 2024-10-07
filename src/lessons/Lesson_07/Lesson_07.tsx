@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "components/Button/Button";
 import "./styles.css";
 import Counter from "components/Counter/Counter";
-
+import { LessonWrapper } from "./styles";
 
 // Создайте функцию, которая бы принимала бы следующие параметры:
 // код погоды и функция decode, которая дает расшифровку погоды по коду.
@@ -14,10 +14,9 @@ import Counter from "components/Counter/Counter";
 // песчаная буря (видимость менее 10 км) Подсказка: удобно использовать в
 // одном из методов switch-case:
 function Lesson_07() {
-
-    // минимизация ошибок
-    // при изменении кода достаточно изменить enum
-    // 
+  // минимизация ошибок
+  // при изменении кода достаточно изменить enum
+  //
   enum WEATHER_CODES {
     SQ = "SQ",
     PO = "PO",
@@ -75,7 +74,7 @@ function Lesson_07() {
   // КОНТРОЛЬ СОСТОЯНИЕМ CHILD С ПОМОЩЬЮ PARENT COMPONENT
 
   const [count, setCount] = useState<number>(0);
-    const onPlus = () => {
+  const onPlus = () => {
     setCount((prevValue: number) => {
       return prevValue + 1;
     });
@@ -87,11 +86,12 @@ function Lesson_07() {
     });
   };
 
-  return <div className="lesson07-wrapper">
-    <Counter count={count} onMinus={onMinus} onPlus={onPlus}/>
-    <Button name="Send" onClick={() => {}} />
-
-  </div>;
+  return (
+    <LessonWrapper>
+      <Counter count={count} onMinus={onMinus} onPlus={onPlus} />
+      <Button name="Send" onClick={() => {}} />
+    </LessonWrapper>
+  );
 }
 
 export default Lesson_07;
