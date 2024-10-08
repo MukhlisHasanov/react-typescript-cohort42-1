@@ -8,7 +8,7 @@ function Input({
   placeholder,
   label,
   disabled = false,
-  $error = undefined,
+  error,
   value,
   onChange,
 }: InputProps) {
@@ -17,7 +17,7 @@ function Input({
       <InputLabel htmlFor={id}>{label}</InputLabel>
       <InputComponent
         disabled={disabled}
-        $error={$error}
+        $error={error}
         id={id}
         name={name}
         type={type}

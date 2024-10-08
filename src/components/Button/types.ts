@@ -1,10 +1,11 @@
+import { MouseEvent } from "react";
+
 export type ButtonTypes = "submit" | "reset" | "button" | undefined;
 
 interface ButtonProps {
   type?: ButtonTypes;
   name: string;
-  // onClick?: string[];
-  onClick?: () => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   isDeleteVariant?: boolean;
   disabled?: boolean;
 }

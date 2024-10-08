@@ -37,7 +37,7 @@ function Homework_08() {
       </ButtonControl>
 
       <Input
-        $error={undefined}
+        error={undefined}
         id="input-1"
         label="Normal input"
         placeholder="Enter your first name"
@@ -47,7 +47,7 @@ function Homework_08() {
       <Input
         // Если isDeleteVariant не передавать явно true, то сам React это воспринимает это как true
         disabled
-        $error={undefined}
+        error={undefined}
         id="input-1"
         label="Disable input"
         placeholder="Enter your first name"
@@ -55,7 +55,7 @@ function Homework_08() {
       />
 
       <Input
-        $error={"Some error"}
+        error={"Some error"}
         id="input-1"
         label="Input with error"
         placeholder="Enter your first name"
