@@ -1,10 +1,10 @@
-import Contact_us from "components/Contact us/Contact us";
+import ContactUsForm from "components/ContactUsForm/ContactUsForm";
 import { HomeworkWrapper } from "./styles";
 
 function Homework_11() {
   return (
     <HomeworkWrapper>
-      <Contact_us />
+      <ContactUsForm />
     </HomeworkWrapper>
   );
 }
