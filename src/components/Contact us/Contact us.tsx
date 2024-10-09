@@ -26,11 +26,10 @@ function Contact_us() {
       phone: "",
       email: "",
     },
-    validationSchema: validationSchema,
+    validationSchema,
     validateOnChange: false,
-    onSubmit: (values, helpers) => {
+    onSubmit: (values) => {
       console.log(values);
-     
     },
   });
 
