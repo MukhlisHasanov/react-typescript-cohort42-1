@@ -1,6 +1,6 @@
-import "./styles.css";
-import { SimpsonsCardProps } from "./types";
+import { Avatar, CardItem, CardWrapper } from "./styles";
 
+import { SimpsonsCardProps } from "./types";
 
 function SimponsCard({
   firstName,
@@ -14,12 +14,12 @@ function SimponsCard({
   };
 
   return (
-    <div className="card-wrapper">
-      <img className="avatar" src={avatar} alt="Avatar" />
-      <p className="card-item">Full name: {getSimpsonName()} </p>
-      <p className="card-item">Job: {job}</p>
-      <p className="card-item">Hobby: {hobby}</p>
-    </div>
+    <CardWrapper>
+      <Avatar src={avatar} alt="Avatar" />
+      <CardItem>Full name: {getSimpsonName()}</CardItem>
+      <CardItem>Job: {job}</CardItem>
+      <CardItem>Hobby: {hobby}</CardItem>
+    </CardWrapper>
   );
 }
 

@@ -1,6 +1,6 @@
 import Feedback from "components/Feedback/Feedback";
 import Input from "components/Input/Input";
-import "./styles.css";
+import { HomeworkWrapper } from "./styles";
 import LoginForm from "components/LoginForm/LoginForm";
 import SimponsCard from "components/SimpsonsCard/SimpsonCard";
 import Button from "components/Button/Button";
@@ -49,7 +49,7 @@ function Homework_07() {
   };
 
   return (
-    <div className="homework07-wrapper">
+    <HomeworkWrapper>
       <Input
         id="input-1"
         label="First name"
@@ -64,35 +64,43 @@ function Homework_07() {
         resetResults={resetResults}
       />
       <LoginForm />
+
       <Button name="Open Simpson Card" onClick={openModal} />
       {isModalOpen && (
-        <Modal>
-          <div className="modal-example-container">
-            <SimponsCard
-              firstName={homerSimpson.firstName}
-              lastName={homerSimpson.lastName}
-              avatar={homerSimpson.avatar}
-              hobby={homerSimpson.hobby}
-              job={homerSimpson.job}
-            />
-            <p>
-              Homer Jay Simpson is one of the main characters in the animated
-              sitcom The Simpsons and the father of the family of the same name.
-              Homer and his wife Marge have three children: Bart, Lisa, and
-              Maggie. As the family's breadwinner, Homer works at the
-              Springfield Nuclear Power Plant. Homer embodies several classes of
-              American stereotypes: he is slovenly, incompetent, clumsy, lazy, a
-              heavy drinker, and ignorant, and has an over-important
-              personality; however, he is also, at heart, a decent man who is
-              fiercely loyal to his family. Despite the suburban blue-collar
-              routine of the show, he has a number of remarkable experiences. He
-              usually wears a white polo, blue jeans, and gray shoes.
-            </p>
+        <Modal closeModal={closeModal}>
+          <div className="succes-modal-wrapper">
+            <div className="modal-info-container">
+              <p>
+                <SimponsCard
+                  firstName={homerSimpson.firstName}
+                  lastName={homerSimpson.lastName}
+                  avatar={homerSimpson.avatar}
+                  hobby={homerSimpson.hobby}
+                  job={homerSimpson.job}
+                />
+                Homer Jay Simpson is one of the main characters in the animated
+                sitcom The Simpsons and the father of the family of the same
+                name. Homer and his wife Marge have three children: Bart, Lisa,
+                and Maggie. As the family's breadwinner, Homer works at the
+                Springfield Nuclear Power Plant. Homer embodies several classes
+                of American stereotypes: he is slovenly, incompetent, clumsy,
+                lazy, a heavy drinker, and ignorant, and has an over-important
+                personality; however, he is also, at heart, a decent man who is
+                fiercely loyal to his family. Despite the suburban blue-collar
+                routine of the show, he has a number of remarkable experiences.
+                He usually wears a white polo, blue jeans, and gray shoes.
+              </p>
+              {/* <img
+                className="modal-icon"
+                src="https://w7.pngwing.com/pngs/442/715/png-transparent-check-mark-computer-icons-icon-design-cheque-successful-angle-logo-grass-thumbnail.png"
+                alt="Success Icon"
+              /> */}
+            </div>
             <Button name="Close Modal" onClick={closeModal} />
           </div>
         </Modal>
       )}
-    </div>
+    </HomeworkWrapper>
   );
 }
 
