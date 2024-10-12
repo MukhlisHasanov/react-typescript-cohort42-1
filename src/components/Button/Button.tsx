@@ -1,5 +1,5 @@
+import { ButtonProps } from "./types";
 import { ButtonComponent } from "./styles";
-import ButtonProps from "./types";
 
 function Button({
   type = "button",
@@ -11,9 +11,9 @@ function Button({
   return (
     <ButtonComponent
       $isDeleteVariant={isDeleteVariant}
-      disabled={disabled}
       onClick={onClick}
       type={type}
+      disabled={disabled}
     >
       {name}
     </ButtonComponent>

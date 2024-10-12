@@ -1,22 +1,25 @@
 import { useState } from "react";
 
 import Button from "components/Button/Button";
-import "./styles.css";
 import Counter from "components/Counter/Counter";
-import { LessonWrapper } from "./styles";
 
-// Создайте функцию, которая бы принимала бы следующие параметры:
-// код погоды и функция decode, которая дает расшифровку погоды по коду.
-// Функция должна возвращать строку, описывающую погоду. Таблица соответствия
-// код-описание: SQ – шквал PO – пыльный вихрь FC - торнадо BR – дымка
-// (видимость от 1 до 9 км) HZ – мгла (видимость менее 10 км) FU – дым
-// (видимость менее 10 км) DS - пыльная буря (видимость менее 10 км) SS -
-// песчаная буря (видимость менее 10 км) Подсказка: удобно использовать в
-// одном из методов switch-case:
+import { PageWrapper } from "./styles";
+
+// !! Есть 2 основных способа вызова перерендера(обновления) компонента:
+// 1 - изменения state(посредством вызова функции setState())
+// 2 - изменение props
+
 function Lesson_07() {
-  // минимизация ошибок
-  // при изменении кода достаточно изменить enum
-  //
+  // 12. enum
+  // Создайте функцию, которая бы принимала бы следующие параметры:
+  // код погоды и функция decode, которая дает расшифровку погоды по коду.
+  // Функция должна возвращать строку, описывающую погоду. Таблица соответствия
+  // код-описание: SQ – шквал PO – пыльный вихрь FC - торнадо BR – дымка
+  // (видимость от 1 до 9 км) HZ – мгла (видимость менее 10 км) FU – дым
+  // (видимость менее 10 км) DS - пыльная буря (видимость менее 10 км) SS -
+  // песчаная буря (видимость менее 10 км) Подсказка: удобно использовать в
+  // одном из методов switch-case:
+
   enum WEATHER_CODES {
     SQ = "SQ",
     PO = "PO",
@@ -43,10 +46,10 @@ function Lesson_07() {
         return "дымка (видимость от 1 до 9 км)";
       }
       case WEATHER_CODES.HZ: {
-        return "мгла (видимость от 1 до 9 км)";
+        return "мгла (видимость менее 10 км)";
       }
       case WEATHER_CODES.FU: {
-        return "дым (видимость менее 10 км)";
+        return "дым  (видимость менее 10 км)";
       }
       case WEATHER_CODES.DS: {
         return "пыльная буря (видимость менее 10 км)";
@@ -55,7 +58,7 @@ function Lesson_07() {
         return "песчаная буря (видимость менее 10 км)";
       }
       default: {
-        return "Weather code doesn't found";
+        return "Weather code is not found";
       }
     }
   };
@@ -66,14 +69,12 @@ function Lesson_07() {
   ) => {
     return decode(code);
   };
-
   console.log(weatherDecode(WEATHER_CODES.FC, decode));
 
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-  // КОНТРОЛЬ СОСТОЯНИЕМ CHILD С ПОМОЩЬЮ PARENT COMPONENT
-
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Контроль состоянием Child с помошью Parnet Component
   const [count, setCount] = useState<number>(0);
+
   const onPlus = () => {
     setCount((prevValue: number) => {
       return prevValue + 1;
@@ -81,16 +82,21 @@ function Lesson_07() {
   };
 
   const onMinus = () => {
-    setCount((prevValue) => {
+    setCount((prevValue: number) => {
       return prevValue - 1;
     });
   };
 
   return (
-    <LessonWrapper>
+    <PageWrapper>
       <Counter count={count} onMinus={onMinus} onPlus={onPlus} />
-      <Button name="Send" onClick={() => {}} />
-    </LessonWrapper>
+      <Button
+        name="Send"
+        onClick={() => {
+          console.log(`Сounter ${count} sent to server successfully`);
+        }}
+      />
+    </PageWrapper>
   );
 }
 

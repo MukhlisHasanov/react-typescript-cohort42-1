@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+
 import { colors } from "styles/colors";
 
 interface ButtonComponentStyleProps {
@@ -12,7 +13,7 @@ export const ButtonComponent = styled.button<ButtonComponentStyleProps>`
   border: none;
   background-color: ${({ $isDeleteVariant, disabled }) => {
     if (disabled) {
-      return colors.DISABLED;
+      return colors.GREY;
     } else {
       if ($isDeleteVariant) {
         return colors.ERROR;

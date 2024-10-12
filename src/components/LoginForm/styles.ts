@@ -12,6 +12,7 @@ export const LoginFormContainer = styled.form`
   background-color: white;
   gap: 30px;
 `;
+
 export const Title = styled.p`
   color: #000000;
   font-size: 24px;

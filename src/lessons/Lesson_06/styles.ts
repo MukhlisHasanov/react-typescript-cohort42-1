@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const LessonWrapper = styled.div`
+export const PageWrapper = styled.div`
   display: flex;
   flex: 1;
   padding: 80px;

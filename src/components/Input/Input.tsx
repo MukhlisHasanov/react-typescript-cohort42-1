@@ -1,5 +1,10 @@
-import { InputComponent, InputLabel, InputWrapper } from "./styles";
 import { InputProps } from "./types";
+import {
+  InputWrapper,
+  InputComponent,
+  InputLabel,
+  ErrorContainer,
+} from "./styles";
 
 function Input({
   id,
@@ -8,7 +13,7 @@ function Input({
   placeholder,
   label,
   disabled = false,
-  error,
+  error = undefined,
   value,
   onChange,
 }: InputProps) {
@@ -16,15 +21,16 @@ function Input({
     <InputWrapper>
       <InputLabel htmlFor={id}>{label}</InputLabel>
       <InputComponent
-        disabled={disabled}
-        $error={error}
         id={id}
         name={name}
         type={type}
         placeholder={placeholder}
+        disabled={disabled}
+        $error={error}
         value={value}
         onChange={onChange}
-      ></InputComponent>
+      />
+      <ErrorContainer>{error}</ErrorContainer>
     </InputWrapper>
   );
 }

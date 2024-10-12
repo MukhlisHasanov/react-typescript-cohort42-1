@@ -14,7 +14,6 @@ export const FeedbackWrapper = styled.div`
   background-color: rgb(26, 35, 53);
   color: white;
 `;
-
 export const FeedbackControl = styled.div`
   display: flex;
   align-items: center;
@@ -22,7 +21,7 @@ export const FeedbackControl = styled.div`
   width: 100%;
 `;
 
-export const ButtonWithCountContainer = styled.div`
+export const ButtonwithcountContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;

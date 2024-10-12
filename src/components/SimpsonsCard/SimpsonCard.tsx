@@ -1,6 +1,5 @@
-import { Avatar, CardItem, CardWrapper } from "./styles";
-
 import { SimpsonsCardProps } from "./types";
+import { CardWrapper, CardItem, Avatar } from "./styles";
 
 function SimponsCard({
   firstName,
@@ -16,7 +15,7 @@ function SimponsCard({
   return (
     <CardWrapper>
       <Avatar src={avatar} alt="Avatar" />
-      <CardItem>Full name: {getSimpsonName()}</CardItem>
+      <CardItem>Full name: {getSimpsonName()} </CardItem>
       <CardItem>Job: {job}</CardItem>
       <CardItem>Hobby: {hobby}</CardItem>
     </CardWrapper>

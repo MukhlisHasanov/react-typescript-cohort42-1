@@ -1,5 +1,5 @@
 import { ModalProps } from "./types";
-import { ModalWrapper, ModalComponent } from "./styles";
+import { ModalComponent, ModalWrapper } from "./styles";
 
 function Modal({ children, closeModal }: ModalProps) {
   return (

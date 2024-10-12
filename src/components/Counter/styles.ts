@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const CounterComponent = styled.div`
+export const CounterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -9,5 +9,5 @@ export const PageWrapper = styled.div`
   gap: 40px;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.PRIMARY_BLUE};
+  background-color: ${colors.PRIMARY};
 `;

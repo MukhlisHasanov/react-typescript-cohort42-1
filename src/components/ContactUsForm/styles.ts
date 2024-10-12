@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const ContactUsContainer = styled.form`
+export const ContactUsFormContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 590px;
@@ -12,6 +12,7 @@ export const ContactUsContainer = styled.form`
   background-color: white;
   gap: 30px;
 `;
+
 export const Title = styled.p`
   color: #000000;
   font-size: 24px;
