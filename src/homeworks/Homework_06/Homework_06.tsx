@@ -1,5 +1,5 @@
 import { HomeworkWrapper } from "./styles";
-import Card from "components/Card/Card";
+import Card from "components/UniversityCard/UniversityCard";
 import { v4 } from "uuid";
 import { ReactNode } from "react";
 import { Universities } from "./types";

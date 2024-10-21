@@ -1,10 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
-import { v4 } from "uuid";
-import { UserImg } from "assets";
-
-import { APP_ROUTES } from "constants/routes";
-
 import {
   LayoutWrapper,
   AppHeader,
@@ -18,6 +11,13 @@ import {
   FooterNav,
   LogoImg,
 } from "./styles";
+
+import { useNavigate } from "react-router-dom";
+import { v4 } from "uuid";
+import { UserImg } from "assets";
+
+import { APP_ROUTES } from "constants/routes";
+
 import { LayoutProps } from "./types";
 
 function Layout({ children }: LayoutProps) {
